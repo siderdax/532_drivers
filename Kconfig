@@ -1,0 +1,63 @@
+#
+# GPIO infrastructure and drivers
+#
+
+menuconfig HIMS_DRIVERS
+	bool "HIMS Hardware devices"
+	default y
+	---help---
+	  Say Y here to get to see options for hims hardware devices and
+	  processors. 
+
+	  If you say N, all options in this submenu will be skipped and disabled.
+
+if HIMS_DRIVERS
+
+#YGRYU 201.01.29
+config HIMS_BRLKEY
+	bool "HIMS H532B Braille Key Driver"
+	help
+	  Provides H532B Braille Key Driver.
+
+config HIMS_BRLCELL
+	bool "HIMS H532B Braille Cell Driver"
+	help
+	  Provides H532B Braille Cell Driver.
+
+config HIMS_H532B_LCD
+	bool "HIMS H532B LCD Display Driver"
+	help
+	  Provides H532B LCD Display Driver.
+
+config HIMS_BUZZER
+	bool "HIMS H532B device buzzer driver"
+	help
+	  H532B buzzer driver.
+
+config HIMS_VIBRATOR
+	bool "HIMS H532B device vibrator driver"
+	help
+	  H532B vibrator driver.
+
+config HIMS_DEVICE_ENABLE_CONTROLLER
+	bool "HIMS H532B device enable controller"
+	help
+	  Controlling gpio enable pins.
+
+config HIMS_SECONDARY_RTC
+	bool "HIMS H532B secondary RTC device driver"
+	help
+	  Enable to use secondary ds3232 RTC device in H532B.
+
+config HIMS_IRDA
+	bool "HIMS IrDA device driver"
+	help
+	  Enable to use IrDA device in H532B.	
+
+#YGRYU 2015.12.15 to test OTG
+config H532B_DWC3_TEST
+	bool "HIMS H532B DWC3 OTG TEST"
+	help
+	  Enable to test mode of DWC3 OTG in H532B.
+
+endif # HIMS_DRIVERS
